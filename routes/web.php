@@ -33,9 +33,16 @@ Route::middleware('auth')->group(function () {
     // Jalur untuk Logout
     Route::post('/logout', [AuthController::class, 'logout']);
 
+
+    // Menambahkan rute untuk /pengguna
+    Route::get('/pengguna', function () {
+    // Ini akan memanggil file resources/views/pengguna.blade.php
+    return view('pengguna'); 
+})->middleware('auth'); // middleware('auth') memastikan hanya yang sudah login yang bisa buka
+
     // Halaman Dashboard
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('admin.dashboard');
     });
 
     // Jalur Destinasi (Cukup 1 baris ini saja, sudah mencakup index, create, store, edit, update, destroy)

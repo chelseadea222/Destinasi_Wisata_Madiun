@@ -49,7 +49,7 @@ class AuthController extends Controller
 
         // INI BAGIAN PENTING:
         // Pastikan mengarah ke '/dashboard'
-        return redirect()->intended('/dashboard'); 
+        return redirect()->intended('/pengguna'); 
     }
 
     return back()->with('error', 'Email atau password salah.');
